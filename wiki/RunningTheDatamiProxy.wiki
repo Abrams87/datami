@@ -14,4 +14,14 @@ In addition, as keeping all the data and processing them on the local computer o
 
 == Getting the sources and compiling ==
 
-The sources of the datami-proxy are available from the public SVN of the DATAMI Google code repository (see []
+The sources of the datami-proxy are available from the public SVN of the DATAMI Google code repository (see [the datami-proxy directory http://code.google.com/p/datami/source/browse/#svn%2Ftrunk%2Fdatami-proxy]). 
+
+A simple [http://code.google.com/p/datami/source/browse/trunk/datami-proxy/compile.sh compilation shell script is also provided].
+
+== Setting up the local triple store ==
+
+As mentioned above, any triple store that implements SPARQL Update can be used with datami-proxy. The only requirement is that it should be started separately and be running when the datami-proxy starts.
+
+In out installations, we use Fuseki (see link above), which can easily be downloaded and installed. An [http://code.google.com/p/datami/source/browse/trunk/datami-proxy/run-fuseki.sh example script] is provide to start Fuseki (assuming it hes been installed in a directory named "Fuseki-0.2.0"). 
+
+ 
