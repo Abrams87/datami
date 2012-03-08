@@ -9,3 +9,9 @@ The datami-proxy is a logging Web proxy. It intercepts Web traffic going in and 
 To realize that, datami-proxy relies on the [http://jetty.codehaus.org/jetty/ Jetty] web application server to capture Web traffic and retransmit it to its intended destination. As it does that, it collects information about the proxy and send it to a running triple store, using the [http://www.w3.org/TR/sparql11-update/ SPARQL Update protocal]. Different types of triple stores implementing the SPARQL Update protocal are available. We generally use [http://incubator.apache.org/jena/documentation/serving_data/ Fuseki], as it is self-contain, easy to set-up and reasonably lightweight in terms of memory consumption.
 
 In addition, as keeping all the data and processing them on the local computer of the user might not be convenient, the datami-proxy can be set-up to synchronize and clear the content of the local triple store at regular intervals, therefore using the local triple store only as a temporary buffer.
+
+= Setting up and running the datami-proxy =
+
+== Getting the sources and compiling ==
+
+The sources of the datami-proxy are available from the public SVN of the DATAMI Google code repository (see []
