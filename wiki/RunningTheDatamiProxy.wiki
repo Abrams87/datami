@@ -24,4 +24,12 @@ As mentioned above, any triple store that implements SPARQL Update can be used w
 
 In out installations, we use Fuseki (see link above), which can easily be downloaded and installed. An [http://code.google.com/p/datami/source/browse/trunk/datami-proxy/run-fuseki.sh example script] is provide to start Fuseki (assuming it hes been installed in a directory named "Fuseki-0.2.0"). 
 
- 
+== Configuring the datami-proxy ==
+
+Configuring the datami-proxy is done through the [http://code.google.com/p/datami/source/browse/trunk/datami-proxy/wllproxy.properties wllproxy.properties] configuration file. The element be included are:
+  * (Optional) If computer of the user usually access the internet through a proxy, the host and port of this proxy
+  * The URL of the SPARQL Update endpoint from the local triple-store
+  * The URL of the SPARQL Query endpoint from the local triple-store
+  * The URL of the SPARQL Update endpoint of the external triple-store for synchronization 
+  * The synchronization delay (in seconds, default: 1800)
+  * The username (all alpha-numerical characters) to include in the data
