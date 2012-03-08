@@ -1,4 +1,5 @@
-
+#! /bin/bash
+# super simple compilation script for datami proxy
 
 cd src 
 
