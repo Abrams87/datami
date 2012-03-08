@@ -1,0 +1,7 @@
+# Instruction to install, configure and run the datami-proxy to collect information about the user's web activities
+
+The datami-proxy is at the basis of the DATAMI application. It takes the form of a Web proxy, installed on the user's local computer, and that logs information about HTTP requests and responses in and RDF triple store, to be processed by other parts of the DATAMI architecture. 
+
+= What it does and what does it build on =
+
+The datami-proxy is a logging Web proxy. It intercepts Web traffic going in and out of the user's computer and collect information about this traffic. It differs however from standard Web proxies as 1- it stores the information in a semantic web compatible format, using an RDF triple store, and 2- it stores different types of information. Indeed, standard logging proxy would store in a text format mostly information about the URLs accessed, their parameters and time. In our case, we also need to log the textual content of the response, in order to be able to analyze it to extract common entities the user interacts with. 
