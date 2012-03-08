@@ -2,6 +2,10 @@
 
 The datami-proxy is at the basis of the DATAMI application. It takes the form of a Web proxy, installed on the user's local computer, and that logs information about HTTP requests and responses in and RDF triple store, to be processed by other parts of the DATAMI architecture. 
 
-= What it does and what does it build on =
+= What it does and what it builds on =
 
 The datami-proxy is a logging Web proxy. It intercepts Web traffic going in and out of the user's computer and collect information about this traffic. It differs however from standard Web proxies as 1- it stores the information in a semantic web compatible format, using an RDF triple store, and 2- it stores different types of information. Indeed, standard logging proxy would store in a text format mostly information about the URLs accessed, their parameters and time. In our case, we also need to log the textual content of the response, in order to be able to analyze it to extract common entities the user interacts with. 
+
+To realize that, datami-proxy relies on the [http://jetty.codehaus.org/jetty/ Jetty] web application server to capture Web traffic and retransmit it to its intended destination. As it does that, it collects information about the proxy and send it to a running triple store, using the [http://www.w3.org/TR/sparql11-update/ SPARQL Update protocal]. Different types of triple stores implementing the SPARQL Update protocal are available. We generally use [http://incubator.apache.org/jena/documentation/serving_data/ Fuseki], as it is self-contain, easy to set-up and reasonably lightweight in terms of memory consumption.
+
+In addition, as keeping all the data and processing them on the local computer of the user might not be convenient, the datami-proxy can be set-up to synchronize and clear the content of the local triple store at regular intervals, therefore using the local triple store only as a temporary buffer.
