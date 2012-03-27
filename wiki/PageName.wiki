@@ -1,3 +1,0 @@
-#Instruction to run the text processing component of DATAMI
-
-....
