@@ -1,13 +1,19 @@
-#summary One-sentence summary of this page.
+#How to run the text annotation processing of collected texts.
 
-= Introduction =
+The DATAMI text processing component is the part of the datami architecture in charge of running the texts collected using the datami-proxy through an automatic text annotation service, here the Apache Stanbol Enhancer.
 
-Add your content here.
+==What it does==
 
+The basic task is to query the triple store containing the data collected by the proxy, extract the texts, call the annotation service, save the results through another triple store, and delete the texts from the original triple store.
 
-= Details =
+It will realize this at regular intervals so that the triple store containing the annotation is constantly updated with information coming from the datami-proxy.
 
-Add your content here.  Format your content with:
-  * Text in *bold* or _italic_
-  * Headings, paragraphs, and lists
-  * Automatic links to other wiki pages
+==Setting up and running it==
+
+The source of the DATAMI text processing component are available on the public SVN of the DATAMI Google code repository (see http://code.google.com/p/datami/source/browse/#svn%2Ftrunk%2Fdatami-process-text).
+
+Simple [http://code.google.com/p/datami/source/browse/trunk/datami-process-text/compile.sh compilation] and [http://code.google.com/p/datami/source/browse/trunk/datami-process-text/run-text-process.sh run] scripts are provided.
+
+Running this components requires access to two triple stores, one that contains information produced by the datami-proxy, and the other to host the information resulting from the automatic annotation. Once started, the text processing component will regularly query the first triple store, call the annotation service with found new text, and update both triple stores. 
+
+The [http://code.google.com/p/datami/source/browse/trunk/datami-process-text/datami.properties datami.properties] file is used to configure the tool with the URLs of the triple stores' endpoints, of the annotation service and with other useful types of information.
