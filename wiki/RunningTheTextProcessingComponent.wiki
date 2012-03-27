@@ -1,10 +1,8 @@
-#How to run the text annotation processing of collected texts.
-
-The DATAMI text processing component is the part of the datami architecture in charge of running the texts collected using the datami-proxy through an automatic text annotation service, here the Apache Stanbol Enhancer.
+The DATAMI text processing component is the part of the [http://www.datami.co.uk/?p=12 datami architecture] in charge of running the texts collected using the [http://www.datami.co.uk/?p=24 datami-proxy] through an automatic text annotation service, here the [http://incubator.apache.org/stanbol/docs/trunk/enhancer.html Apache Stanbol Enhancer].
 
 ==What it does==
 
-The basic task is to query the triple store containing the data collected by the proxy, extract the texts, call the annotation service, save the results through another triple store, and delete the texts from the original triple store.
+The basic tasks of this tool are to query the triple store containing the data collected by the proxy, extract the texts, call the annotation service, save the results through another triple store, and delete the texts from the original triple store.
 
 It will realize this at regular intervals so that the triple store containing the annotation is constantly updated with information coming from the datami-proxy.
 
