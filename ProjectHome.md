@@ -1,0 +1,3 @@
+This is the code and documentation based for the [DATAMI](http://datami.co.uk) application. Code is released here under the [MIT license](http://www.opensource.org/licenses/mit-license.html) and documentation under a [CC-by license](http://creativecommons.org/licenses/by/3.0/us/).
+
+Attribution should be given to "The DATAMI team, Knowledge Media Institute, The Open University (http://kmi.open.ac.uk), Walton Hall, Milton Keynes, MK7 6AA, UK"
